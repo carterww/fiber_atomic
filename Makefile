@@ -6,6 +6,14 @@ C_FLAGS = -I. -std=c89 $(C_OPT_FLAGS) $(C_WARNING_FLAGS)
 
 all: test
 
+test_gcc:
+	@gcc $(C_FLAGS) test.c
+	@./a.out
+
+test_clang:
+	@clang $(C_FLAGS) test.c
+	@./a.out
+
 test:
 	@cc $(C_FLAGS) test.c
 	@./a.out

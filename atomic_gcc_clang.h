@@ -1,3 +1,5 @@
+/* See LICENSE file for copyright and license details. */
+
 #ifndef _FIBER_ATOMIC_GCC_CLANG
 #define _FIBER_ATOMIC_GCC_CLANG
 
@@ -69,11 +71,11 @@ enum fiber_atomic_memorder {
 
 #define fiber_atomic_fetch_inc(ptr, memorder) \
 	fiber_atomic_fetch_add(ptr, 1, memorder)
-#define fiber_atomic_inc_fetch(ptr, memorder) \
-	fiber_atomic_add_fetch(ptr, 1, memorder)
-
 #define fiber_atomic_fetch_dec(ptr, memorder) \
 	fiber_atomic_fetch_sub(ptr, 1, memorder)
+
+#define fiber_atomic_inc_fetch(ptr, memorder) \
+	fiber_atomic_add_fetch(ptr, 1, memorder)
 #define fiber_atomic_dec_fetch(ptr, memorder) \
 	fiber_atomic_sub_fetch(ptr, 1, memorder)
 
