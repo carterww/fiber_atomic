@@ -60,11 +60,21 @@
  */
 
 #if defined(__GNUC__) || defined(FIBER_ATOMIC_OPERATIONS_IMPL_GCC)
+
+#if !defined(FIBER_ATOMIC_OPERATIONS_IMPL_GCC)
 #define FIBER_ATOMIC_OPERATIONS_IMPL_GCC
+#endif
+
 #include "atomic_gcc_clang.h"
+
 #elif defined(__clang__) || defined(FIBER_ATOMIC_OPERATIONS_IMPL_CLANG)
+
+#if !defined(FIBER_ATOMIC_OPERATIONS_IMPL_CLANG)
 #define FIBER_ATOMIC_OPERATIONS_IMPL_CLANG
+#endif
+
 #include "atomic_gcc_clang.h"
+
 #else
 #error "Unsupported platform. fiber_atomic only supports atomic ops using GCC and Clang extensions."
 #endif
