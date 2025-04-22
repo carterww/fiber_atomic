@@ -16,7 +16,8 @@ enum fiber_atomic_memorder {
 	FIBER_ATOMIC_SEQ_CST = __ATOMIC_SEQ_CST
 };
 
-#define fiber_atomic_memory_barrier(memorder) ((void)__atomic_thread_fence(memorder))
+#define fiber_atomic_memory_barrier(memorder) \
+	((void)__atomic_thread_fence(memorder))
 
 #define fiber_atomic_load(ptr, memorder) (__atomic_load_n(ptr, memorder))
 

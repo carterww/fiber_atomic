@@ -217,6 +217,6 @@ int main(void)
 	test_sub();
 	test_and();
 	test_xor();
-        test_or();
+	test_or();
 	return 0;
 }
