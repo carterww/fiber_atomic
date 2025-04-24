@@ -8,8 +8,6 @@
 	"This file uses compiler extensions that may not be supported by your compiler."
 #endif
 
-#include <stdbool.h>
-
 enum fiber_atomic_memorder {
 	FIBER_ATOMIC_RELAXED = __ATOMIC_RELAXED,
 	FIBER_ATOMIC_ACQUIRE = __ATOMIC_ACQUIRE,
@@ -40,9 +38,9 @@ enum fiber_atomic_memorder {
 
 #define fiber_atomic_cmp_xchng(ptr, expected_ptr, desired_val, is_weak,   \
 			       success_memorder, failure_memorder)        \
-	((int)__atomic_compare_exchange_n(                                \
-		ptr, expected_ptr, desired_val, (is_weak ? true : false), \
-		(int)success_memorder, (int)failure_memorder))
+	((int)__atomic_compare_exchange_n(ptr, expected_ptr, desired_val, \
+					  is_weak, (int)success_memorder, \
+					  (int)failure_memorder))
 
 #define fiber_atomic_cmp_xchng_from(ptr, expected_ptr, desired_ptr, is_weak, \
 				    success_memorder, failure_memorder)      \

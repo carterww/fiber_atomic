@@ -43,7 +43,7 @@
  *   failure_memorder): Checks if ptr's value equals expected_ptr's value. If so,
  *   desired_val is placed in ptr and a nonzero value is returned. If not, ptr's value
  *   is written to expected_ptr and 0 is returned. is_weak should be 0 to perform a
- *   strong cmp_xchng (doesn't fail spuriously).
+ *   strong cmp_xchng (doesn't fail spuriously) or 1 to perform a weak cmp_xchng.
  * - fiber_atomic_cmp_xchng_from(ptr, expected_ptr, desired_ptr, is_weak, success_memorder,
  *   failure_memorder): Same behavior as fiber_atomic_cmp_xchng except disired_ptr holds
  *   the desired value.
