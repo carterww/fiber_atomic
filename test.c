@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "atomic.h"
+#include "fiber_atomic/atomic.h"
 
 /* This is a simple test file that asserts the existence of and/or behavior of
  * atomic operations. It does not ensure these operations are actually atomic.

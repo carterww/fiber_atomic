@@ -2,7 +2,7 @@ C_WARNING_FLAGS = -Werror -Wall -Wextra -Wno-unused -Wfloat-equal \
 		  -Wdouble-promotion -Wformat-overflow -Wformat=2 \
 		  -Wnull-dereference -Wmissing-include-dirs -Wswitch-default \
 		  -Wswitch-enum
-C_FLAGS = -I. -std=c89 $(C_OPT_FLAGS) $(C_WARNING_FLAGS)
+C_FLAGS = -I. -I./include -std=c99 $(C_OPT_FLAGS) $(C_WARNING_FLAGS)
 
 all: test
 
